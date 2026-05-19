@@ -23,16 +23,57 @@ Durante la Semana 9 se incorporaron mejoras orientadas a la usabilidad (UI), exp
 
 # 🏗️ Arquitectura MVC
 
-El proyecto mantiene separación de responsabilidades mediante el patrón MVC.
-
 ```plaintext
-app/
-├── Controller/
-├── Model/
-└── View/
-
-Config/
-Public/
+el-faro-semana-9/
+├── app/                        # Capa central de la aplicación (MVC)
+│   ├── Controller/             # Controladores que manejan la lógica de negocio y enrutamiento interno
+│   │   ├── ArticuloController.php   # Maneja la vista de inicio, detalles de noticias y validación para publicar
+│   │   ├── ContactoController.php   # Procesa y valida el envío del formulario de contacto
+│   │   └── UsuarioController.php    # Administra el registro, autenticación (login) y listado de usuarios
+│   │
+│   ├── Model/                  # Lógica de datos, reglas de negocio e interacción con MySQL
+│   │   ├── Articulo.php             # Funciones para interactuar con artículos y procedimientos almacenados
+│   │   ├── Comentario.php           # Métodos para guardar, obtener y eliminar comentarios de la base de datos
+│   │   ├── Contacto.php             # Método para registrar nuevos mensajes de contacto
+│   │   ├── Sesion.php               # Gestiona variables de sesión y validación de administrador
+│   │   └── Usuario.php              # Clase que representa al usuario y maneja registro/autenticación
+│   │
+│   └── View/                   # Interfaces gráficas renderizadas para el lector
+│       ├── Layout/             # Estructuras reutilizables de la plataforma
+│       │   ├── header.php           # Barra de navegación, estructura HTML y carga de Bulma CSS
+│       │   └── footer.php           # Pie de página y carga de archivos JavaScript
+│       │
+│       ├── articulo_detalle.php     # Vista detallada de noticias y sistema de comentarios
+│       ├── contacto.php             # Formulario de contacto
+│       ├── inicio.php               # Página principal con artículos recientes y multimedia
+│       ├── lista_usuario.php        # Listado de usuarios registrados (administrador)
+│       ├── login.php                # Formulario de autenticación
+│       ├── nuevo_articulo.php       # Formulario para creación de noticias
+│       └── registro.php             # Registro de usuarios con validaciones HTML5
+│
+├── Config/                     # Configuración y conexión a base de datos
+│   ├── Conexion.php            # Instancia PDO y métodos encapsulados de conexión
+│   └── Config.php              # Definición de constantes de conexión MySQL
+│
+├── Public/                     # Directorio público accesible desde navegador
+│   ├── CSS/
+│   │   └── style.css           # Personalización visual y diseño responsive
+│   │
+│   ├── JS/
+│   │   └── script.js           # Funcionalidades dinámicas y validaciones visuales
+│   │
+│   ├── assets/                 # Recursos multimedia del sistema
+│   │   ├── audio/
+│   │   │   └── El_Faro_audio.mp3
+│   │   │
+│   │   └── video/
+│   │       └── video_web.mp4
+│   │
+│   └── index.php               # Front Controller y enrutamiento principal MVC
+│
+├── elfaro_db.sql               # Base de datos MySQL, tablas y procedimientos almacenados
+└── README.md                   # Documentación oficial del proyecto
+```
 ```
 
 ## Componentes
