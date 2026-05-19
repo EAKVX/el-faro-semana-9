@@ -74,7 +74,6 @@ el-faro-semana-9/
 ├── elfaro_db.sql               # Base de datos MySQL, tablas y procedimientos almacenados
 └── README.md                   # Documentación oficial del proyecto
 ```
-```
 
 ## Componentes
 
