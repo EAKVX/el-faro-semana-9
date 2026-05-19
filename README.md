@@ -117,12 +117,20 @@ La base de datos incluye:
 
 ---
 
-# 📱 Responsividad
-
+📱 Responsividad
 La plataforma fue desarrollada utilizando Bulma CSS, permitiendo correcta visualización en:
+
 - computadores
 - tablets
 - dispositivos móviles
+
+---
+
+# ⚠️ Importante
+
+GitHub Pages no permite ejecutar proyectos PHP ni conexiones MySQL de forma nativa, por lo que este proyecto debe ejecutarse en un entorno local utilizando XAMPP o un servidor compatible con PHP y MySQL.
+
+La plataforma fue desarrollada para funcionar en entorno local mediante Apache y MySQL.
 
 ---
 
